@@ -68,9 +68,6 @@
 /efs/hw_offset                                          u:object_r:sensors_efs_file:s0
 /efs/prox_cal                                           u:object_r:sensors_efs_file:s0
 
-# Shell
-/system/vendor/bin/init\.qcom\.usb\.sh                  u:object_r:qti_init_shell_exec:s0
-
 # Surfaceflinger
 /sys/devices/virtual/graphics/fb1/format_3d            -- u:object_r:surfaceflinger_sysfs:s0
 /sys/devices/virtual/graphics/fb1/hpd                  -- u:object_r:surfaceflinger_sysfs:s0
