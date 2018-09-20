@@ -1,3 +1,0 @@
-allow netmgrd vendor_file_type:file rx_file_perms;
-allow netmgrd sysfs:dir rw_file_perms;
-allow netmgrd netmgrd:capability { dac_override };

@@ -69,7 +69,6 @@ ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 
 # Radio
 persist.data.ds_fmc_app.mode=0
-persist.data_netmgrd_nint=16
 persist.data.qmi.adb_logmask=0
 persist.net.doxlat=true
 persist.omh.enabled=1

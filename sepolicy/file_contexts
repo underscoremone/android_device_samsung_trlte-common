@@ -50,7 +50,6 @@
 /system/blobs/(.*)/vendor/bin/mdm_helper_proxy          u:object_r:mdm_helper_exec:s0
 /system/blobs/(.*)/vendor/bin/qmuxd                     u:object_r:qmuxd_exec:s0
 /system/blobs/(.*)/vendor/bin/rild                      u:object_r:rild_exec:s0
-/system/blobs/(.*)/vendor/bin/netmgrd                   u:object_r:netmgrd_exec:s0
 
 # SEC
 /sys/devices/virtual/sec/sec_key/hall_irq_ctrl          u:object_r:sysfs_sec:s0
