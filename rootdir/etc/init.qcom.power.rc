@@ -95,7 +95,3 @@ on property:sys.boot_completed=1
     chown system system /sys/module/qcom_cpufreq/parameters/boost_ms
     chmod 0660 /sys/module/qcom_cpufreq/parameters/boost_ms
 
-service charger /sbin/healthd -c
-    class charger
-    critical
-    seclabel u:r:healthd:s0

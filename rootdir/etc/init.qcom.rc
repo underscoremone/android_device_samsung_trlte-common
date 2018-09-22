@@ -368,7 +368,7 @@ on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
     # Allow subsystem (modem etc) debugging
-    write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
+    #write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
 
     # Subsytem Restart
     #venus
@@ -508,17 +508,6 @@ on boot
 
     # Allow RIL daemon to assign port open fd_wakelock
     chown system radio /sys/devices/virtual/sec/mdm_hsic_pm/waketime
-
-    # To allow interfaces to get v6 address when tethering is enabled
-    write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet1/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet2/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet3/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet4/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet5/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet6/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet7/accept_ra 2
-    write /proc/sys/net/ipv6/conf/rmnet_usb0/accept_ra 2
 
     # To prevent out of order acknowledgements from making
     # connection tracking to treat them as not belonging to
@@ -1236,11 +1225,6 @@ service sensors /system/vendor/bin/sensors.qcom
     user root
     group root
 
-service rfs_access /system/vendor/bin/rfs_access
-    class core
-    user system
-    group system net_raw
-
 service rmt_storage /system/vendor/bin/rmt_storage
     class core
     user root
@@ -1391,8 +1375,18 @@ on property:persist.sys.ssr.restart_level=3
 
 on property:service.bootanim.exit=1
     #write /sys/module/rmnet_usb/parameters/dump_ctrl_msg 2
+    # To allow interfaces to get v6 address when tethering is enabled
+    write /proc/sys/net/ipv6/conf/rmnet_data0/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_data1/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_data2/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_data3/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_data4/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_data5/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_data6/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_data7/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_mhi0/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_mhi1/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_mhi2/accept_ra 2
     write /proc/sys/net/ipv6/conf/rmnet_mhi3/accept_ra 2
+    write /proc/sys/net/ipv6/conf/rmnet_usb0/accept_ra 2
 
